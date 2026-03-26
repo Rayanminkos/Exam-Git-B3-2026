@@ -1,0 +1,22 @@
+name: Deploy Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Afficher debut du deploiement
+        run: echo "Debut du deploiement"
+
+      - name: Recuperer et afficher le secret DEPLOY_TOKEN
+        env:
+          DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
+        run: echo "DEPLOY_TOKEN=$DEPLOY_TOKEN"
+
+      - name: Afficher fin du deploiement
+        run: echo "Deploiement termine par Moukalla Rayan"
